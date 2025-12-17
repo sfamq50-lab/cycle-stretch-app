@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{{ url_for('index') }}" class="back-btn">← ホームに戻る</a>
+
+<h2 class="page-title">{{ title }}</h2>
+
+<div class="stretch-list">
+    {% if stretches %}
+    {% for stretch in stretches %}
+    <div class="stretch-card">
+        <div class="stretch-content">
+            <img src="{{ url_for('static', filename='images/' + stretch.image_file) }}" alt="{{ stretch.name }}"
+                class="stretch-img">
+            <div class="stretch-info">
+                <div class="stretch-header">
+                    <span class="stretch-name">{{ stretch.name }}</span>
+                    <span class="stretch-duration">{{ stretch.duration }}</span>
+                </div>
+                <p class="stretch-desc">{{ stretch.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p style="text-align:center; color: #888;">該当するメニューはありません。</p>
+    {% endif %}
+</div>
+{% endblock %}

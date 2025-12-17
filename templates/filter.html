@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-title">休憩環境を選んでください</div>
+
+<a href="{{ url_for('index') }}" class="back-btn">← 戻る</a>
+
+<div class="menu-grid">
+    <a href="{{ url_for('stretch_list', mode='mid', filter='discrete') }}" class="big-btn mid filter-btn">
+        コンビニ / 人前
+        <span class="filter-sub">目立たない動き (首・手首など)</span>
+    </a>
+
+    <a href="{{ url_for('stretch_list', mode='mid', filter='active') }}" class="big-btn mid filter-btn">
+        公園 / 広い場所
+        <span class="filter-sub">大きく動く (足・体感など)</span>
+    </a>
+</div>
+{% endblock %}

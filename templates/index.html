@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="menu-grid">
+    <a href="{{ url_for('stretch_list', mode='pre') }}" class="big-btn pre">
+        Pre-Ride (乗車前)
+    </a>
+
+    <a href="{{ url_for('mid_ride_filter') }}" class="big-btn mid">
+        Mid-Ride (休憩中)
+    </a>
+
+    <a href="{{ url_for('stretch_list', mode='post') }}" class="big-btn post">
+        Post-Ride (乗車後)
+    </a>
+</div>
+{% endblock %}
